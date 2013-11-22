@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<operators name="WhiBo" version="5.0" docbundle="rs/fon/whibo/resources/WhiboOperatorsDoc">
+   <group key="">
+    <group key="whibo">
+      <group key="gdt_operators">
+         <operator>
+            <key>gdt_algorithm</key>
+            <class>rs.fon.whibo.integration.adapters.learner.GDTModelLearner</class>
+            <icon>lightbulb.png</icon>  
+         </operator>
+         <operator>
+          <key>whibo_gdt_evolutionary_search</key>
+          <class>rs.fon.whibo.optimization.ga.rapidminer.EAOperator</class>
+          <icon>lightbulb.png</icon>  
+        </operator>
+      </group>
+      <group key="validation">
+      <icon>symbol_percent.png</icon>
+      	<operator>
+            <key>xvalidation_with_log</key>
+            <class>rs.fon.whibo.validation.WhiboXValidation</class>
+            <!--<icon>evaluation.png</icon>  -->
+         </operator>
+         <operator>
+            <key>5x2_xvalidation_ftest</key>
+            <class>rs.fon.whibo.validation.Ftest5x2cv</class>
+            <!--<icon>evaluation.png</icon>  -->
+         </operator>
+      </group>
+      <!-- <group key="gc_operators">
+         <operator>
+            <key>gc_algorithm</key>
+            <class>rs.fon.whibo.integration.adapters.learner.GCModelLearner</class>
+            <icon>learner.png</icon>  
+         </operator>
+         <operator>
+            <key>gc_validation</key>
+            <class>rs.fon.whibo.validation.ClusterEvaluation</class> 
+            <icon>validation.png</icon> 
+         </operator>
+         <operator>
+            <key>gc_external_validation</key>
+            <class>rs.fon.whibo.validation.ClusterExternalValidation</class> 
+            <icon>validation.png</icon> 
+         </operator>
+      </group>
+      -->
+     </group>
+   </group>
+</operators>

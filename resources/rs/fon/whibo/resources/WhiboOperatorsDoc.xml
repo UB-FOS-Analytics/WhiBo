@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<operatorHelp lang="en_EN">
+   <operator>
+      <key>gdt_algorithm</key>
+      <name>Generic decision tree</name>
+      <synopsis>Operator for user design of generic decision tree (GDT) algorithms. GDT allows definition of  hundreds of hybrid decision tree algorithms that are composed from components identified in well-known algorithms as well as in partial algorithm improvements, namely ID3 (Quinlan, 1986), C4.5 (Quinlan, 1993), CART (Breiman et al, 1984), and CHAID (Kass, 1980).
+Detailed user manual for using this operator (and extension of WhiBo environment) can be found in http://whibo.fon.bg.ac.rs/joomla/index.php/documentation and example processes in http://whibo.fon.bg.ac.rs/joomla/images/stories/downloads/gdt%20example%20process.zip
+      </synopsis>
+      <help>GDT algorithm can be designed through GUI ("Design Algorithm" button). For every sub-problem (left button array on GUI) one or more components can be selected from central panel (note that it is necessary to define at least one component for "Create split" sub-problem and exactly one for "Evaluate split" sub-problem. When component/s are selected click on button "Save" and sub-problem is defined and current algorithm structure (right panel) will be updated. Finally click on "Save Algorithm" button and save newly designed DT algorithm (.wba file). Once the algorithm is saved it can be reused by setting the path to it as a GDT operator parameter value.</help>
+   </operator>  
+   <operator>
+      <key>5x2_xvalidation_ftest</key>
+      <name>5x2 X-Validation F-test</name>
+      <synopsis>Uses F test to determine if there is significant difference between two algorithm performance</synopsis>
+      <help> This test for measuring significance of the performance difference between two different classifiers is proposed in [Alpaydin E. (1999)]. It showed good statistical power while keeping the I type error low. Differences in performance can then be attributed to the components varied within the algorithms under test. </help>
+   </operator> 
+   <operator>
+      <key>xvalidation_with_log</key>
+      <name>X-Validation with log</name>
+      <synopsis>XValidation that logs algorithm performance into file: Accuracy, Maximum tree depth, Weighted average tree depth, Total nodes, Total leaves, and Execution time. </synopsis>
+      <help> XValidation with custom defined number of folds and number of repetitions. Enables writing results in a log CSV format file (in average and/or for every fold and repetition). This operator writes Accuracy, Maximum tree depth, Weighted average tree depth, Total nodes, Total leaves, and Execution time</help>
+   </operator>
+   <operator>
+      <key>gc_algorithm</key>
+      <name>Generic clusterer</name>
+      <synopsis>Operator for user design of generic clustering algorithms</synopsis>
+      <help> GDT algorithm is designed through GUI, by selecting reusable components RCs for pre-defined sub-problems. RCs for generic decision tree algorithm were identified in well-known algorithms K-means, K-means++, K-median, G-means </help>
+   </operator> 
+   <operator>
+      <key>gc_validation</key>
+      <name>Cluster internal validation</name>
+      <synopsis>Evaluates clusters with internal and external measures</synopsis>
+      <help> This operator enables cluster validation with internal measures</help>
+   </operator>
+   <operator>
+      <key>gc_external_validation</key>
+      <name>Cluster external validation</name>
+      <synopsis>Evaluates clusters with internal and external measures</synopsis>
+      <help> This operator enables cluster validation with external measures</help>
+   </operator>
+   <operator>
+      <key>whibo_gdt_evolutionary_search</key>
+      <name>WhiBo GDT Evolutionary Search</name>
+      <synopsis>Evolutionary search for the best decision tree algorithm in the algorithm (and parameter) space defined with components of WhiBo Generic Decision Tree. Detailed user manual for using this operator (and extension of WhiBo environment) can be found in http://whibo.fon.bg.ac.rs/joomla/index.php/documentation and example processes in http://whibo.fon.bg.ac.rs/joomla/images/stories/downloads/gdt%20ea%20example%20process.rar</synopsis>
+      <help>Searches for the best algorithm, by composing algorithms out of components for Decision tree algorithms used in WhiBo framework. 
+In order to use this operator, algorithm search space (ASS) has to be defined. ASS can be defined through GUI ("Define Space" button). For every sub-problem (left button array on GUI) one or more components can be selected from central panel (note that it is necessary to define at least one component for "Create split" and "Evaluate split" sub-problems). When component/s are selected click on button "Save" and sub-problem is defined and current space structure (right panel) will be updated. Finally click on "Save Space" button and save newly designed DT space (.wba file). Once the algorithm is saved it can be reused by setting the path to it as a GDT evolutionary search parameter value.
+In order to use defined space, macro has to be defined (use "Set Macro" operator) with value of the path to any WhiBo algorithm (.wba) file (any .wba file that is correctly defined). This macro should be placed as a value of wba file path macro name parameter of this operator. Also, log file path parameter has to be defined. In this file all the results (evaluation of every algorithm in the space) will be stored. Setup for algorithm search space and parameters of genetic algorithms are below.
+As inner operator of "WhiBo GDT evolutionary search", some Validation operator has to be placed (e.g. "X-Validation"). For training part of Validation operator "Generic decision tree" operator have to be defined (with the valid path to .wba file - the same path that is previously defined in "Set Macro")  and testing part should have "Apply Model" and "Classification performance" operators. 
+      </help>
+   </operator> 
+</operatorHelp>

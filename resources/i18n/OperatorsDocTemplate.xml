@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<operatorHelp lang="en_EN">
+   <operator>
+      <key>gdt_algorithm</key>
+      <name>Generic decision tree</name>
+      <synopsis>Operator for user design of generic decision tree (GDT) algorithms</synopsis>
+      <help>GDT algorithm is designed through GUI, by selecting reusable components RCs for pre-defined sub-problems. RCs for generic decision tree algorithm were identified in well-known algorithms as well as in partial algorithm improvements, namely ID3 (Quinlan, 1986), C4.5 (Quinlan, 1993), CART (Breiman et al, 1984), and CHAID (Kass, 1980).</help>
+   </operator>  
+   <operator>
+      <key>5x2_xvalidation_ftest</key>
+      <name>5x2 X-Validation F-test</name>
+      <synopsis>Uses F test to determine if there is significant difference between two algorithm performance</synopsis>
+      <help> This test for measuring significance of the performance difference between two different classifiers is proposed in [Alpaydin E. (1999)]. It showed good statistical power while keeping the I type error low. Differences in performance can then be attributed to the components varied within the algorithms under test. </help>
+   </operator> 
+   <operator>
+      <key>xvalidation_with_log</key>
+      <name>X-Validation with log</name>
+      <synopsis>XValidation that logs algorithm performance into file: Accuracy, Maximum tree depth, Weighted average tree depth, Total nodes, Total leaves, and Execution time. </synopsis>
+      <help> XValidation with custom defined number of folds and number of repetitions. Enables writing results in a log CSV format file (in average and/or for every fold and repetition). This operator writes Accuracy, Maximum tree depth, Weighted average tree depth, Total nodes, Total leaves, and Execution time</help>
+   </operator>
+   <operator>
+      <key>gc_algorithm</key>
+      <name>Generic clusterer</name>
+      <synopsis>Operator for user design of generic clustering algorithms</synopsis>
+      <help> GDT algorithm is designed through GUI, by selecting reusable components RCs for pre-defined sub-problems. RCs for generic decision tree algorithm were identified in well-known algorithms K-means, K-means++, K-median, G-means </help>
+   </operator> 
+   <operator>
+      <key>gc_validation</key>
+      <name>Cluster validation</name>
+      <synopsis>Evaluates clusters with internal and external measures</synopsis>
+      <help> This operator enables cluster validation with internal and external measures</help>
+   </operator>
+</operatorHelp>

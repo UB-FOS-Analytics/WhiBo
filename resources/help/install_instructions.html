@@ -1,0 +1,52 @@
+<span color="#AAAAAA">RapidMiner R Extension 5.0.001</span>
+
+<h1>Content</h1>
+<ol>
+   <li>Installation Guide</li>
+   <li>Using the console</li>
+   <li>Using R Operators</li>
+   <li>Acknowledgments</li>
+</ol>
+
+
+<h1>1. Installation Guide</h1>
+<p>For using the R Extension of RapidMiner, you need to have R installed on your computer. You will need an R version of at least 2.11.1. If you don't have R installed, please refer to the homepage (<a href="http://www.r-project.org">http://www.r-project.org</a>)
+of the R Project to get the latest download version. Please make sure that R is compiled for the same architecture as RapidMiner: An 32 bit RapidMiner can only access a 32 bit R, and a 64 bit RapidMiner needs 64 bit R.<br />
+Please follow the instructions below to complete the installation.
+</p>
+<ol>
+   <li>After you have installed a proper version of R, you need to open the R console to prepare R to support being accessed by RapidMiner. You have to install rJava available on CRAN by typing the following command on the console: <br />
+   <tt>install.packages("rJava")</tt></li>
+   <li>You should now type <tt>.libPaths()</tt> and note the listed directories. One of them is used to store the rJava package and you will need to remember it when RapidMiner starts. If finished successfully, R is prepared for RapidMiner.</li>
+   <li>Now you have to make sure, that RapidMiner can find the program libraries of R by adding it to the PATH environment variable of your operating system: Add &lt;R installation directory&gt;/bin to the PATH variable on Linux systems or &lt;R
+   installation directory&gt;\bin on Windows machines. This directory must contain the dynamic link library of R and all dependent libraries, which is called <tt>libR.so</tt>, <tt>R.so</tt> or <tt>R.dll</tt> depending on your operating system.</li>
+   <li>If you don't already have a valid JAVA_HOME variable pointing to the installation directory of your java, you need to create it. If you don't have java installed on your computer, point it to &lt;RapidMiner installation directory&gt;/jre.
+   You have to make sure, that the java is of the same architecture as R and RapidMiner, either 32bit or 64bit.</li>
+   <li>Now you can configure RapidMiner. If you click on <tt>Next</tt>, you will be asked to enter the path to the jri library that has been installed with rJava. This is located in one of the <tt>.libpath</tt> directories noted above and more
+   exact in <tt>&lt;libpath directory&gt;/rJava/jri/</tt>. The filename depends on your operating system and is <tt>jri.dll</tt> on Windows and <tt>libjri.so</tt> or <tt>jri.so</tt> on Unix.</li>
+   <li>If you have selected the file, RapidMiner will exit, since the new environment variables are still unknown and you need to restart the program manually.</li>
+</ol>
+<p>If the new R Perspective has been added after restart, everything runs just fine. If not, please check if the file is in the correct directory, is accessible by RapidMiner and if the path is set to the correct R version.</p>
+
+<h1>2. Using the Console</h1>
+<p>The most obvious change in RapidMiner is the additional R perspective. It offers you a simple console to the running R instance. You can enter R code as usual and execute it by pressing enter. Arrows will give you access to the commands of
+your history. You can switch the console to multi-line mode using the icon in the toolbar. Then you will execute a statement or function by pressing Ctrl + Enter and cycling through history by Ctrl + Up or Ctrl + Down.</p>
+
+<p>On the left a list of currently defined variables is shown. You can save and reload variables and their content to and from repository. This might be useful for storing information like performances and final results for later use. You can
+double click any of these results in the repository view to get a quick insight by the print() representation of the object.</p>
+
+<p>The right hand side shows a plot window. To transfer the plot to RapidMiner it is needed to close the plot device. No other plot device beside JavaGD is supported. The plot can be exported to various file formats by the corresponding button on
+the tool bar. Zooming is supported by the mouse wheel.</p>
+
+<p>The help window shows the help that is available using the usual ? command on the console. Unfortunately ?? is not supported currently.</p>
+
+
+<h1>3. Using R operators</h1>
+<p>The R Extension comes with a number of operators that use R commands for model building. You can incorporate them as other standard RapidMiner operators, saving and applying of models is also possible. The Execute Script (R) operator allows to
+execute various R scripts as well as consuming and delivering ExampleSets and generic R objects. Please refer to the operator documentation for more details.</p>
+
+
+<h1>4. Acknowledgements</h1>
+<p>First of all the authors of this extensions have to thank Bernd Bischl, Technical University of Dortmund, for the kindly provided advice. Without his knowledge the publication of the extension would have been delayed for months. Additionally
+all included operators are based on his very useful MLR package (http://mlr.r-forge.r-project.org), this has saved us a hell of work. The extension is based upon rJava, JavaGD and JRI, which are all developed and maintained by Simon Urbanek. Thanks
+to his work Java developers are able to access R without writing native code.</p>

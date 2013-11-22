@@ -1,0 +1,72 @@
+<rs.fon.whibo.GDT.problem.GenericTreeProblem>
+  <description>Generic decision tree</description>
+  <subproblems class="linked-list">
+    <rs.fon.whibo.GDT.problem.subproblem.RemoveInsignificantAtributes>
+      <name>Remove insignificant atributes</name>
+      <description>Remove insignificant atributes</description>
+      <availableImplementationClassNames>
+        <string>rs.fon.whibo.GDT.component.removeInsignificantAttributes.ChiSquareTestCategorical</string>
+        <string>rs.fon.whibo.GDT.component.removeInsignificantAttributes.FTestNumerical</string>
+      </availableImplementationClassNames>
+      <multiple>true</multiple>
+    </rs.fon.whibo.GDT.problem.subproblem.RemoveInsignificantAtributes>
+    <rs.fon.whibo.GDT.problem.subproblem.PossibleSplit>
+      <name>Create split</name>
+      <description>Create split</description>
+      <availableImplementationClassNames>
+        <string>rs.fon.whibo.GDT.component.possibleSplits.BinaryCategorical</string>
+        <string>rs.fon.whibo.GDT.component.possibleSplits.BinaryNumerical</string>
+        <string>rs.fon.whibo.GDT.component.possibleSplits.MultiwayCategorical</string>
+        <string>rs.fon.whibo.GDT.component.possibleSplits.SignificantCategorical</string>
+      </availableImplementationClassNames>
+      <multiple>true</multiple>
+      <listOfStepData class="linked-list">
+        <rs.fon.whibo.problem.SubproblemData>
+          <listOfParameters class="linked-list"/>
+          <nameOfImplementationClass>rs.fon.whibo.GDT.component.possibleSplits.MultiwayCategorical</nameOfImplementationClass>
+        </rs.fon.whibo.problem.SubproblemData>
+      </listOfStepData>
+    </rs.fon.whibo.GDT.problem.subproblem.PossibleSplit>
+    <rs.fon.whibo.GDT.problem.subproblem.SplitEvaluation>
+      <name>Evaluate split</name>
+      <description>Evaluate split</description>
+      <availableImplementationClassNames>
+        <string>rs.fon.whibo.GDT.component.splitEvaluation.ChiSquare</string>
+        <string>rs.fon.whibo.GDT.component.splitEvaluation.DistanceMeasure</string>
+        <string>rs.fon.whibo.GDT.component.splitEvaluation.GainRatio</string>
+        <string>rs.fon.whibo.GDT.component.splitEvaluation.GiniIndex</string>
+        <string>rs.fon.whibo.GDT.component.splitEvaluation.InformationGain</string>
+        <string>rs.fon.whibo.GDT.component.splitEvaluation.RandomEval</string>
+      </availableImplementationClassNames>
+      <multiple>false</multiple>
+      <stepData>
+        <listOfParameters class="linked-list"/>
+        <nameOfImplementationClass>rs.fon.whibo.GDT.component.splitEvaluation.InformationGain</nameOfImplementationClass>
+      </stepData>
+    </rs.fon.whibo.GDT.problem.subproblem.SplitEvaluation>
+    <rs.fon.whibo.GDT.problem.subproblem.StopingCriteria>
+      <name>Stop criteria</name>
+      <description>Stop criteria</description>
+      <availableImplementationClassNames>
+        <string>rs.fon.whibo.GDT.component.stoppingCriteria.LeafLabelConfidence</string>
+        <string>rs.fon.whibo.GDT.component.stoppingCriteria.MinNodeSize</string>
+        <string>rs.fon.whibo.GDT.component.stoppingCriteria.Time</string>
+        <string>rs.fon.whibo.GDT.component.stoppingCriteria.TreeDepth</string>
+      </availableImplementationClassNames>
+      <multiple>true</multiple>
+    </rs.fon.whibo.GDT.problem.subproblem.StopingCriteria>
+    <rs.fon.whibo.GDT.problem.subproblem.Prunning>
+      <name>Prune tree</name>
+      <description>Prune tree</description>
+      <availableImplementationClassNames>
+        <string>rs.fon.whibo.GDT.component.prunning.CostComplexity</string>
+        <string>rs.fon.whibo.GDT.component.prunning.MinLeafSize</string>
+        <string>rs.fon.whibo.GDT.component.prunning.MinimalError</string>
+        <string>rs.fon.whibo.GDT.component.prunning.PessimisticError</string>
+        <string>rs.fon.whibo.GDT.component.prunning.ReducedError</string>
+      </availableImplementationClassNames>
+      <multiple>true</multiple>
+    </rs.fon.whibo.GDT.problem.subproblem.Prunning>
+  </subproblems>
+  <name>Generic Decision Tree</name>
+</rs.fon.whibo.GDT.problem.GenericTreeProblem>
